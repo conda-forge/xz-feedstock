@@ -1,4 +1,4 @@
-{% set version = "5.0.5" %}
+{% set version = "5.2.2" %}
 
 package:
     name: xz
@@ -7,18 +7,30 @@ package:
 source:
     fn:  xz-{{ version }}.tar.bz2
     url: http://tukaani.org/xz/xz-{{ version }}.tar.gz
-    sha256: 5dcffe6a3726d23d1711a65288de2e215b4960da5092248ce63c99d50093b93a
+    sha256: 73df4d5d34f0468bd57d09f2d8af363e95ed6cc3a4a86129d2f2c366259902a2 
 
 build:
     number: 1
-    skip: True  # [win]
+    # limited to VS 2015 on Win for now - for sake of C99 support
+    msvc_compiler: 14.0
+
+requirements:
+    run:
+       # limited to VS 2015 on Win for now - for sake of C99 support
+       - vs2015_runtime
 
 test:
     commands:
-        - xz --help
-        - unxz --help
-        - lzma --help
+        - xz --help      # [unix]
+        - unxz --help      # [unix]
+        - lzma --help      # [unix]
         - conda inspect linkages -n _test xz  # [linux]
+        # cheesy file existence tests.  would be better to compile simple example program.
+        #   Note: no xz executable exists on windows right now - only libs.
+        - if not exist %PREFIX%\\Library\\bin\\liblzma.dll exit 1  # [win]
+        - if not exist %PREFIX%\\Library\\lib\\liblzma.lib exit 1  # [win]
+        - if not exist %PREFIX%\\Library\\lib\\liblzma_static.lib exit 1  # [win]
+        - if not exist %PREFIX%\\Library\\include\\lzma.h exit 1  # [win]
 
 about:
     home: http://tukaani.org/xz/
@@ -27,4 +39,5 @@ about:
 
 extra:
     recipe-maintainers:
+        - msarahan
         - ocefpaf
