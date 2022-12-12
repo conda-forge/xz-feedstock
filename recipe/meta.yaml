@@ -1,7 +1,7 @@
 {% set version = "5.2.9" %}
 
 package:
-  name: xz
+  name: xz-split
   version: {{ version }}
 
 source:
@@ -11,7 +11,7 @@ source:
     - 0002-Add-gettimeofday-for-VS2008.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # XZ's track record of backcompat is very good.  Keep default pins (next major version)
     #    https://abi-laboratory.pro/tracker/timeline/xz/
@@ -85,3 +85,4 @@ extra:
     - mingwandroid
     - nehaljwani
     - scopatz
+  feedstock-name: xz
