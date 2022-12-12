@@ -1,7 +1,7 @@
 {% set version = "5.2.9" %}
 
 package:
-  name: xz
+  name: xz-split
   version: {{ version }}
 
 source:
@@ -11,7 +11,7 @@ source:
     - 0002-Add-gettimeofday-for-VS2008.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # XZ's track record of backcompat is very good.  Keep default pins (next major version)
     #    https://abi-laboratory.pro/tracker/timeline/xz/
@@ -20,19 +20,28 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - c99-to-c89  # [win and vc<14]
     - cmake  # [win]
     - ninja  # [win]
     - make  # [not win]
     - automake  # [not win]
     - libtool  # [not win]
   host:
-    - msinttypes  # [win and vc<14]
 
 outputs:
   - name: xz
     script: install.sh  # [unix]
     script: install.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - cmake  # [win]
+        - ninja  # [win]
+        - make  # [not win]
+        - automake  # [not win]
+        - libtool  # [not win]
+        - make  # [not win]
+      host:
+      run:
     test:
       commands:
         - xz --help  # [not win]
@@ -51,13 +60,11 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
-        - c99-to-c89  # [win and vc<14]
         - cmake  # [win]
         - ninja  # [win]
         - make  # [not win]
         - automake  # [not win]
       host:
-        - msinttypes  # [win and vc<14]
         - {{ pin_subpackage('xz', exact=True) }}
       run:
         - {{ pin_subpackage('xz', exact=True) }}
@@ -85,3 +92,4 @@ extra:
     - mingwandroid
     - nehaljwani
     - scopatz
+  feedstock-name: xz
