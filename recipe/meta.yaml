@@ -1,4 +1,4 @@
-{% set version = "5.2.9" %}
+{% set version = "5.4.1" %}
 
 package:
   name: xz
@@ -6,7 +6,7 @@ package:
 
 source:
   url: http://downloads.sourceforge.net/project/lzmautils/xz-{{ version }}.tar.bz2
-  sha256: b194507fba3a462a753c553149ccdaa168337bcb7deefddd067ba987c83dfce6
+  sha256: dd172acb53867a68012f94c17389401b2f274a1aa5ae8f84cbfb8b7e383ea8d3
   patches:
     - 0002-Add-gettimeofday-for-VS2008.patch
 
