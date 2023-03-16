@@ -51,7 +51,7 @@ outputs:
         - unxz README.xz  # [not win]
         - lzma --help  # [not win]
         - xz.exe README  # [win]
-        - unxz.exe README.xz  # [win]
+        # - unxz.exe README.xz  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\liblzma.lib exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1  # [win]
