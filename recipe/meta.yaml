@@ -44,12 +44,14 @@ outputs:
       host:
         - msinttypes  # [win and vc<14]
     test:
+      source_files:
+        - README
       commands:
-        - xz --help  # [not win]
-        - unxz --help  # [not win]
+        - xz README  # [not win]
+        - unxz README.xz  # [not win]
         - lzma --help  # [not win]
-        - xz.exe --help  # [win]
-        - unxz.exe --help  # [win]
+        - xz.exe README  # [win]
+        - unxz.exe README.xz  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\liblzma.lib exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1  # [win]
