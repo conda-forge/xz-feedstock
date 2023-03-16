@@ -1,7 +1,7 @@
 {% set version = "5.4.1" %}
 
 package:
-  name: xz
+  name: xz-split
   version: {{ version }}
 
 source:
@@ -10,10 +10,6 @@ source:
 
 build:
   number: 0
-  run_exports:
-    # XZ's track record of backcompat is very good.  Keep default pins (next major version)
-    #    https://abi-laboratory.pro/tracker/timeline/xz/
-    - {{ pin_subpackage('xz') }}
 
 requirements:
   build:
@@ -31,6 +27,22 @@ outputs:
   - name: xz
     script: install.sh  # [unix]
     script: install.bat  # [win]
+    build:
+      run_exports:
+        # XZ's track record of backcompat is very good.  Keep default pins (next major version)
+        #    https://abi-laboratory.pro/tracker/timeline/xz/
+        - {{ pin_subpackage('xz') }}
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - c99-to-c89  # [win and vc<14]
+        - cmake  # [win]
+        - ninja  # [win]
+        - make  # [not win]
+        - automake  # [not win]
+        - libtool  # [not win]
+      host:
+        - msinttypes  # [win and vc<14]
     test:
       commands:
         - xz --help  # [not win]
@@ -43,6 +55,8 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1  # [win]
         - test -f ${PREFIX}/lib/liblzma${SHLIB_EXT}  # [unix]
         - test ! -f ${PREFIX}/lib/liblzma.a          # [unix]
+
+
   - name: xz-static
     script: install.sh  # [unix]
     script: install.bat  # [win]
@@ -65,7 +79,7 @@ outputs:
 
 about:
   home: http://tukaani.org/xz/
-  license: LGPL-2.1 and GPL-2.0
+  license: LGPL-2.1-or-later and GPL-2.0-or-later
   license_file: COPYING
   summary: Data compression software with high compression ratio
   description: |
