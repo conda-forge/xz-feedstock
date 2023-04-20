@@ -8,9 +8,6 @@ autoreconf -vfi
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
 
-if [[ "$CONDA_BUILD_CROSS_COMPILATION" != 1 ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
   make check
 fi
-
-# remove libtool files
-find $PREFIX -name '*.la' -delete
