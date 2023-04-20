@@ -22,9 +22,9 @@ requirements:
     - {{ compiler('c') }}
     - cmake  # [win]
     - ninja  # [win]
-    - make  # [not win]
-    - automake  # [not win]
-    - libtool  # [not win]
+    - make      # [unix]
+    - automake  # [unix]
+    - libtool   # [unix]
   host:
 
 outputs:
@@ -36,24 +36,30 @@ outputs:
         - {{ compiler('c') }}
         - cmake  # [win]
         - ninja  # [win]
-        - make  # [not win]
-        - automake  # [not win]
-        - libtool  # [not win]
-        - make  # [not win]
+        - make      # [unix]
+        - automake  # [unix]
+        - libtool   # [unix]
+        - make      # [unix]
       host:
       run:
     test:
       commands:
-        - xz --help  # [not win]
-        - unxz --help  # [not win]
-        - lzma --help  # [not win]
-        - xz.exe --help  # [win]
-        - unxz.exe --help  # [win]
-        - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
-        - if not exist %LIBRARY_PREFIX%\lib\liblzma.lib exit 1  # [win]
-        - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1  # [win]
+        - test -f ${PREFIX}/bin/xz                   # [unix]
+        - test -f ${PREFIX}/bin/unxz                 # [unix]
+        - test -f ${PREFIX}/bin/lzma                 # [unix]
+        - xz --help                                  # [unix]
+        - unxz --help                                # [unix]
+        - lzma --help                                # [unix]
         - test -f ${PREFIX}/lib/liblzma${SHLIB_EXT}  # [unix]
         - test ! -f ${PREFIX}/lib/liblzma.a          # [unix]
+        - if not exist %LIBRARY_PREFIX%\bin\xz.exe exit 1       # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\unxz.exe exit 1     # [win]
+        - xz.exe --help                                         # [win]
+        - unxz.exe --help                                       # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\liblzma.lib exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1   # [win]
+
   - name: xz-static
     script: install.sh  # [unix]
     script: install.bat  # [win]
@@ -62,15 +68,15 @@ outputs:
         - {{ compiler('c') }}
         - cmake  # [win]
         - ninja  # [win]
-        - make  # [not win]
-        - automake  # [not win]
+        - make      # [unix]
+        - automake  # [unix]
       host:
         - {{ pin_subpackage('xz', exact=True) }}
       run:
         - {{ pin_subpackage('xz', exact=True) }}
     test:
       commands:
-        - test -f ${PREFIX}/lib/liblzma.a          # [unix]
+        - test -f ${PREFIX}/lib/liblzma.a  # [unix]
 
 about:
   home: http://tukaani.org/xz/
