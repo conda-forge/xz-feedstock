@@ -42,11 +42,16 @@ outputs:
       run:
     test:
       commands:
-        - ${PREFIX}/bin/xz --help  # [not win]
-        - ${PREFIX}/bin/unxz --help  # [not win]
-        - ${PREFIX}/bin/lzma --help  # [not win]
-        - "%LIBRARY_BIN%\\xz.exe" --help  # [win]
-        - "%LIBRARY_BIN%\\unxz.exe" --help  # [win]
+        - test -f ${PREFIX}/bin/xz     # [not win]
+        - test -f ${PREFIX}/bin/unxz   # [not win]
+        - test -f ${PREFIX}/bin/lzma   # [not win]
+        - xz --help    # [not win]
+        - unxz --help  # [not win]
+        - lzma --help  # [not win]
+        - if not exist %LIBRARY_PREFIX%\bin\xz.exe exit 1    # [win]
+        - if not exist %LIBRARY_PREFIX%\bin\unxz.exe exit 1  # [win]
+        - xz.exe --help  # [win]
+        - unxz.exe --help  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\liblzma.lib exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1  # [win]
