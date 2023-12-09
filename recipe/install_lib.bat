@@ -19,6 +19,7 @@ cmake -G "Ninja" ^
       -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
       -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
       -DBUILD_SHARED_LIBS=ON ^
+      --debug-trycompile ^
       "%SRC_DIR%"
 
 if errorlevel 1 exit /b 1

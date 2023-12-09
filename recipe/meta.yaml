@@ -22,6 +22,7 @@ requirements:
     - make          # [unix]
     - automake      # [unix]
     - libtool       # [unix]
+    - getopt-win32  # [win]
 
 outputs:
   - name: xz
@@ -37,6 +38,7 @@ outputs:
         - {{ compiler('c') }}
         - cmake <=3.26  # [win]
         - ninja         # [win]
+        - getopt-win32  # [win]
         - make      # [unix]
         - automake  # [unix]
         - libtool   # [unix]
