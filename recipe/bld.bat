@@ -17,6 +17,10 @@ if "%ARCH%" == "64" (
 if  %vc% LEQ 9 set MSVC_VER=1500
 if  %vc% GTR 9 set MSVC_VER=1900
 
+mkdir build
+if errorlevel 1 exit 1
+cd build
+if errorlevel 1 exit 1
 
 cmake -G "Ninja" ^
       "%CMAKE_ARGS%" ^
