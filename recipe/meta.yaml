@@ -16,11 +16,11 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - cmake  # [win]
-    - ninja  # [win]
-    - make      # [unix]
-    - automake  # [unix]
-    - libtool   # [unix]
+    - cmake <=3.26  # [win]
+    - ninja         # [win]
+    - make          # [unix]
+    - automake      # [unix]
+    - libtool       # [unix]
 
 outputs:
   - name: xz
@@ -34,8 +34,8 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
-        - cmake  # [win]
-        - ninja  # [win]
+        - cmake <=3.26  # [win]
+        - ninja         # [win]
         - make      # [unix]
         - automake  # [unix]
         - libtool   # [unix]
@@ -64,10 +64,10 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
-        - cmake  # [win]
-        - ninja  # [win]
-        - make      # [unix]
-        - automake  # [unix]
+        - cmake <=3.26  # [win]
+        - ninja         # [win]
+        - make          # [unix]
+        - automake      # [unix]
       host:
         - {{ pin_subpackage('xz', exact=True) }}
       run:
