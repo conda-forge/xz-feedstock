@@ -12,10 +12,6 @@ source:
 
 build:
   number: 1
-  run_exports:
-    # XZ's track record of backcompat is very good.  Keep default pins (next major version)
-    #    https://abi-laboratory.pro/tracker/timeline/xz/
-    - {{ pin_subpackage('xz') }}
 
 requirements:
   build:
@@ -25,12 +21,16 @@ requirements:
     - make      # [unix]
     - automake  # [unix]
     - libtool   # [unix]
-  host:
 
 outputs:
   - name: xz
-    script: install.sh  # [unix]
+    script: install.sh   # [unix]
     script: install.bat  # [win]
+    build:
+      run_exports:
+        # XZ's track record of backcompat is very good.  Keep default pins (next major version)
+        #    https://abi-laboratory.pro/tracker/timeline/xz/
+        - {{ pin_subpackage('xz') }}
     requirements:
       build:
         - {{ compiler('c') }}
@@ -40,8 +40,6 @@ outputs:
         - automake  # [unix]
         - libtool   # [unix]
         - make      # [unix]
-      host:
-      run:
     test:
       commands:
         - test -f ${PREFIX}/bin/xz                   # [unix]
@@ -61,7 +59,7 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1   # [win]
 
   - name: xz-static
-    script: install.sh  # [unix]
+    script: install.sh   # [unix]
     script: install.bat  # [win]
     requirements:
       build:
