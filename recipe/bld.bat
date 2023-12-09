@@ -17,17 +17,19 @@ if "%ARCH%" == "64" (
 if  %vc% LEQ 9 set MSVC_VER=1500
 if  %vc% GTR 9 set MSVC_VER=1900
 
-if  %vc% LEQ 9 set MSVC_TS_VER=90
-if  %vc% GTR 9 set MSVC_TS_VER=140
 
-cmake -GNinja ^
+cmake -G "Ninja" ^
+      "%CMAKE_ARGS%" ^
       -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
       -DMSVC_VERSION="%MSVC_VER%" ^
-      -DMSVC_TOOLSET_VERSION="%MSVC_TS_VER%" ^
       -DCMAKE_C_USE_RESPONSE_FILE_FOR_OBJECTS:BOOL=FALSE ^
       -DCMAKE_BUILD_TYPE=Release ^
-      -DBUILD_SHARED_LIBS=1 ^
-      --debug-trycompile ^
-      .
-ninja
+      -DCMAKE_PREFIX_PATH:PATH="%LIBRARY_PREFIX%" ^
+      -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
+      -DBUILD_SHARED_LIBS=ON ^
+      "%SRC_DIR%"
+
+if errorlevel 1 exit /b 1
+
+cmake --build . -j %CPU_COUNT% --verbose --config Release
 if errorlevel 1 exit /b 1
