@@ -11,6 +11,7 @@ source:
     - 0002-Add-gettimeofday-for-VS2008.patch
 
 build:
+  skip: true  # [unix]
   number: 1
 
 requirements:
@@ -50,6 +51,7 @@ outputs:
         - lzma --help                                # [unix]
         - test -f ${PREFIX}/lib/liblzma${SHLIB_EXT}  # [unix]
         - test ! -f ${PREFIX}/lib/liblzma.a          # [unix]
+        - dir %PREFIX%\Library\bin  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\liblzma.lib exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1   # [win]
