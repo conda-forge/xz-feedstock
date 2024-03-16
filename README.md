@@ -1,11 +1,11 @@
-About xz
-========
+About xz-feedstock
+==================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xz-feedstock/blob/main/LICENSE.txt)
 
 Home: http://tukaani.org/xz/
 
 Package license: LGPL-2.1 and GPL-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xz-feedstock/blob/main/LICENSE.txt)
 
 Summary: Data compression software with high compression ratio
 
