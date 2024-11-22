@@ -1,7 +1,5 @@
 #!/bin/bash
 
-autoreconf -vfi
-
 ./configure --prefix=${PREFIX}  \
             --build=${BUILD}    \
             --host=${HOST}

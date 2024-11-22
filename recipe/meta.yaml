@@ -22,8 +22,6 @@ requirements:
     - cmake  # [win]
     - ninja  # [win]
     - make  # [not win]
-    - automake  # [not win]
-    - libtool  # [not win]
 
 outputs:
   - name: liblzma
@@ -41,8 +39,6 @@ outputs:
         - cmake  # [win]
         - ninja  # [win]
         - make  # [not win]
-        - automake  # [not win]
-        - libtool  # [not win]
     test:
       commands:
         - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
@@ -71,8 +67,6 @@ outputs:
         - cmake  # [win]
         - ninja  # [win]
         - make  # [not win]
-        - automake  # [not win]
-        - libtool  # [not win]
       host:
         - {{ pin_subpackage('liblzma', exact=True) }}
       run:
@@ -98,8 +92,6 @@ outputs:
         - cmake  # [win]
         - ninja  # [win]
         - make  # [not win]
-        - automake  # [not win]
-        - libtool  # [not win]
       host:
         - {{ pin_subpackage('liblzma', exact=True) }}
         - {{ pin_subpackage('liblzma-devel', exact=True) }}
@@ -135,8 +127,6 @@ outputs:
         - cmake  # [win]
         - ninja  # [win]
         - make  # [not win]
-        - automake  # [not win]
-        - libtool  # [not win]
       host:
         - {{ pin_subpackage('liblzma', exact=True) }}
         - {{ pin_subpackage('liblzma-devel', exact=True) }}
@@ -178,8 +168,6 @@ outputs:
         - cmake  # [win]
         - ninja  # [win]
         - make  # [not win]
-        - automake  # [not win]
-        - libtool  # [not win]
       host:
       host:
         - {{ pin_subpackage('liblzma', exact=True) }}
@@ -220,7 +208,6 @@ outputs:
         - cmake  # [win]
         - ninja  # [win]
         - make  # [not win]
-        - automake  # [not win]
       host:
         - {{ pin_subpackage('xz', exact=True) }}
       run:
