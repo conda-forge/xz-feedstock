@@ -99,12 +99,14 @@ outputs:
         - {{ pin_subpackage('liblzma', exact=True) }}
     test:
       commands:
+        - lzcat --help
         - lzma --help
         - lzmadec --help
         - lzmainfo --help
         - unlzma --help
         - unxz --help
         - xz --help
+        - xzcat --help
         - xzdec --help
     about:
       license: 0BSD AND LGPL-2.1-or-later
@@ -135,7 +137,6 @@ outputs:
         - {{ pin_subpackage('liblzma', exact=True) }}
     test:
       commands:
-        - lzcat --help
         - lzcmp --help
         - lzdiff --help
         - lzegrep --help
@@ -143,7 +144,6 @@ outputs:
         - lzgrep --help
         - lzless --help
         - lzmore --help
-        - xzcat --help
         - xzcmp --help
         - xzdiff --help
         - xzegrep --help
