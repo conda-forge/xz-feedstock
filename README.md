@@ -9,7 +9,7 @@ About xz-split
 
 Home: http://tukaani.org/xz/
 
-Package license: LGPL-2.1 and GPL-2.0
+Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
 
 Summary: Data compression software with high compression ratio
 
@@ -48,7 +48,21 @@ About xz-gpl-tools
 
 
 
-Package license: 0BSD AND LGPL-2.1-or-later
+Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+
+About xz
+--------
+
+
+
+Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+
+About xz-static
+---------------
+
+
+
+Package license: 0BSD
 
 Current build status
 ====================
