@@ -162,11 +162,12 @@ outputs:
         - xzless --help
         - xzmore --help
     about:
-      license: 0BSD AND LGPL-2.1-or-later
+      license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
       license_file:
         - COPYING
         - COPYING.0BSD
         - COPYING.LGPLv2.1
+        - COPYING.GPLv2
   - name: xz
     script: install.sh  # [unix]
     script: install.bat  # [win]
@@ -202,6 +203,13 @@ outputs:
         - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1  # [win]
         - test -f ${PREFIX}/lib/liblzma${SHLIB_EXT}  # [unix]
         - test ! -f ${PREFIX}/lib/liblzma.a          # [unix]
+    about:
+      license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+      license_file:
+        - COPYING
+        - COPYING.0BSD
+        - COPYING.LGPLv2.1
+        - COPYING.GPLv2
   - name: xz-static
     script: install.sh  # [unix]
     script: install.bat  # [win]
@@ -220,10 +228,20 @@ outputs:
     test:
       commands:
         - test -f ${PREFIX}/lib/liblzma.a          # [unix]
+    about:
+      license: 0BSD
+      license_file:
+        - COPYING
+        - COPYING.0BSD
 
 about:
   home: http://tukaani.org/xz/
-  license: LGPL-2.1 and GPL-2.0
+  license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+  license_file:
+    - COPYING
+    - COPYING.0BSD
+    - COPYING.LGPLv2.1
+    - COPYING.GPLv2
   license_file: COPYING
   summary: Data compression software with high compression ratio
   description: |
