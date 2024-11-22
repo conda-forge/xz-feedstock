@@ -1,7 +1,11 @@
-About xz-feedstock
-==================
+About xz-split-feedstock
+========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xz-feedstock/blob/main/LICENSE.txt)
+
+
+About xz-split
+--------------
 
 Home: http://tukaani.org/xz/
 
@@ -17,6 +21,34 @@ XZ Utils is free general-purpose data compression software with a high
 compression ratio. XZ Utils were written for POSIX-like systems, but also
 work on some not-so-POSIX systems.
 
+
+About liblzma
+-------------
+
+
+
+Package license: 0BSD
+
+About liblzma-devel
+-------------------
+
+
+
+Package license: 0BSD
+
+About xz-tools
+--------------
+
+
+
+Package license: 0BSD AND LGPL-2.1-or-later
+
+About xz-gpl-tools
+------------------
+
+
+
+Package license: 0BSD AND LGPL-2.1-or-later
 
 Current build status
 ====================
@@ -90,54 +122,58 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-liblzma-green.svg)](https://anaconda.org/conda-forge/liblzma) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/liblzma.svg)](https://anaconda.org/conda-forge/liblzma) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/liblzma.svg)](https://anaconda.org/conda-forge/liblzma) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/liblzma.svg)](https://anaconda.org/conda-forge/liblzma) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-liblzma--devel-green.svg)](https://anaconda.org/conda-forge/liblzma-devel) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/liblzma-devel.svg)](https://anaconda.org/conda-forge/liblzma-devel) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/liblzma-devel.svg)](https://anaconda.org/conda-forge/liblzma-devel) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/liblzma-devel.svg)](https://anaconda.org/conda-forge/liblzma-devel) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-xz-green.svg)](https://anaconda.org/conda-forge/xz) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz.svg)](https://anaconda.org/conda-forge/xz) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz.svg)](https://anaconda.org/conda-forge/xz) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz.svg)](https://anaconda.org/conda-forge/xz) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-xz--gpl--tools-green.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz-gpl-tools.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz-gpl-tools.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz-gpl-tools.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-xz--static-green.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-xz--tools-green.svg)](https://anaconda.org/conda-forge/xz-tools) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz-tools.svg)](https://anaconda.org/conda-forge/xz-tools) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz-tools.svg)](https://anaconda.org/conda-forge/xz-tools) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz-tools.svg)](https://anaconda.org/conda-forge/xz-tools) |
 
-Installing xz
-=============
+Installing xz-split
+===================
 
-Installing `xz` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `xz-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `xz, xz-static` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `liblzma, liblzma-devel, xz, xz-gpl-tools, xz-static, xz-tools` can be installed with `conda`:
 
 ```
-conda install xz xz-static
-```
-
-or with `mamba`:
-
-```
-mamba install xz xz-static
-```
-
-It is possible to list all of the versions of `xz` available on your platform with `conda`:
-
-```
-conda search xz --channel conda-forge
+conda install liblzma liblzma-devel xz xz-gpl-tools xz-static xz-tools
 ```
 
 or with `mamba`:
 
 ```
-mamba search xz --channel conda-forge
+mamba install liblzma liblzma-devel xz xz-gpl-tools xz-static xz-tools
+```
+
+It is possible to list all of the versions of `liblzma` available on your platform with `conda`:
+
+```
+conda search liblzma --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search liblzma --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search xz --channel conda-forge
+mamba repoquery search liblzma --channel conda-forge
 
-# List packages depending on `xz`:
-mamba repoquery whoneeds xz --channel conda-forge
+# List packages depending on `liblzma`:
+mamba repoquery whoneeds liblzma --channel conda-forge
 
-# List dependencies of `xz`:
-mamba repoquery depends xz --channel conda-forge
+# List dependencies of `liblzma`:
+mamba repoquery depends liblzma --channel conda-forge
 ```
 
 
@@ -182,17 +218,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating xz-feedstock
-=====================
+Updating xz-split-feedstock
+===========================
 
-If you would like to improve the xz recipe or build a new
+If you would like to improve the xz-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/xz-feedstock are
+Note that all branches in the conda-forge/xz-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
