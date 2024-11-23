@@ -19,7 +19,7 @@ requirements:
   build:
     - {{ stdlib('c') }}
     - {{ compiler('c') }}
-    - cmake  # [win]
+    - cmake-no-system  # [win]
     - ninja  # [win]
     - make  # [not win]
 
@@ -36,7 +36,7 @@ outputs:
       build:
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
-        - cmake  # [win]
+        - cmake-no-system  # [win]
         - ninja  # [win]
         - make  # [not win]
     test:
@@ -64,7 +64,7 @@ outputs:
       build:
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
-        - cmake  # [win]
+        - cmake-no-system  # [win]
         - ninja  # [win]
         - make  # [not win]
       host:
@@ -89,7 +89,7 @@ outputs:
       build:
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
-        - cmake  # [win]
+        - cmake-no-system  # [win]
         - ninja  # [win]
         - make  # [not win]
       host:
@@ -126,7 +126,7 @@ outputs:
       build:
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
-        - cmake  # [win]
+        - cmake-no-system  # [win]
         - ninja  # [win]
         - make  # [not win]
       host:
@@ -165,7 +165,7 @@ outputs:
       build:
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
-        - cmake  # [win]
+        - cmake-no-system  # [win]
         - ninja  # [win]
         - make  # [not win]
       host:
@@ -205,7 +205,7 @@ outputs:
       build:
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
-        - cmake  # [win]
+        - cmake-no-system  # [win]
         - ninja  # [win]
         - make  # [not win]
       host:
