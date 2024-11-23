@@ -198,7 +198,7 @@ outputs:
         - COPYING.0BSD
         - COPYING.LGPLv2.1
         - COPYING.GPLv2
-  - name: xz-static
+  - name: liblzma-static
     script: install.sh  # [unix]
     script: install.bat  # [win]
     requirements:
@@ -212,6 +212,30 @@ outputs:
         - {{ pin_subpackage('xz', exact=True) }}
       run:
         - {{ pin_subpackage('xz', exact=True) }}
+    test:
+      commands:
+        - test -f ${PREFIX}/lib/liblzma.a          # [unix]
+    about:
+      license: 0BSD
+      license_file:
+        - COPYING
+        - COPYING.0BSD
+  - name: xz-static
+    script: install.sh  # [unix]
+    script: install.bat  # [win]
+    requirements:
+      build:
+        - {{ stdlib('c') }}
+        - {{ compiler('c') }}
+        - cmake-no-system  # [win]
+        - ninja  # [win]
+        - make  # [not win]
+      host:
+        - {{ pin_subpackage('xz', exact=True) }}
+        - {{ pin_subpackage('liblzma-static', exact=True) }}
+      run:
+        - {{ pin_subpackage('xz', exact=True) }}
+        - {{ pin_subpackage('liblzma-static', exact=True) }}
     test:
       commands:
         - test -f ${PREFIX}/lib/liblzma.a          # [unix]

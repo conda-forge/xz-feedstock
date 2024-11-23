@@ -4,7 +4,7 @@ set -euxo pipefail
 
 make install
 
-if [[ "${PKG_NAME}" != "xz-static" ]]; then
+if [[ "${PKG_NAME}" != "liblzma-static" ]]; then
     rm -rf ${PREFIX}/lib/*.a
 fi
 
