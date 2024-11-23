@@ -1,11 +1,11 @@
-About xz
-========
+About xz-feedstock
+==================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xz-feedstock/blob/main/LICENSE.txt)
 
 Home: http://tukaani.org/xz/
 
 Package license: LGPL-2.1 and GPL-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xz-feedstock/blob/main/LICENSE.txt)
 
 Summary: Data compression software with high compression ratio
 
@@ -159,7 +159,7 @@ available continuous integration services. Thanks to the awesome service provide
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
 [Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
 it is possible to build and upload installable packages to the
-[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
