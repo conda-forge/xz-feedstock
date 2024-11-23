@@ -57,6 +57,13 @@ About xz
 
 Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
 
+About liblzma-static
+--------------------
+
+
+
+Package license: 0BSD
+
 About xz-static
 ---------------
 
@@ -138,6 +145,7 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-liblzma-green.svg)](https://anaconda.org/conda-forge/liblzma) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/liblzma.svg)](https://anaconda.org/conda-forge/liblzma) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/liblzma.svg)](https://anaconda.org/conda-forge/liblzma) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/liblzma.svg)](https://anaconda.org/conda-forge/liblzma) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-liblzma--devel-green.svg)](https://anaconda.org/conda-forge/liblzma-devel) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/liblzma-devel.svg)](https://anaconda.org/conda-forge/liblzma-devel) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/liblzma-devel.svg)](https://anaconda.org/conda-forge/liblzma-devel) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/liblzma-devel.svg)](https://anaconda.org/conda-forge/liblzma-devel) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-liblzma--static-green.svg)](https://anaconda.org/conda-forge/liblzma-static) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/liblzma-static.svg)](https://anaconda.org/conda-forge/liblzma-static) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/liblzma-static.svg)](https://anaconda.org/conda-forge/liblzma-static) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/liblzma-static.svg)](https://anaconda.org/conda-forge/liblzma-static) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-xz-green.svg)](https://anaconda.org/conda-forge/xz) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz.svg)](https://anaconda.org/conda-forge/xz) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz.svg)](https://anaconda.org/conda-forge/xz) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz.svg)](https://anaconda.org/conda-forge/xz) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-xz--gpl--tools-green.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz-gpl-tools.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz-gpl-tools.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz-gpl-tools.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-xz--static-green.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) |
@@ -153,16 +161,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `liblzma, liblzma-devel, xz, xz-gpl-tools, xz-static, xz-tools` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `liblzma, liblzma-devel, liblzma-static, xz, xz-gpl-tools, xz-static, xz-tools` can be installed with `conda`:
 
 ```
-conda install liblzma liblzma-devel xz xz-gpl-tools xz-static xz-tools
+conda install liblzma liblzma-devel liblzma-static xz xz-gpl-tools xz-static xz-tools
 ```
 
 or with `mamba`:
 
 ```
-mamba install liblzma liblzma-devel xz xz-gpl-tools xz-static xz-tools
+mamba install liblzma liblzma-devel liblzma-static xz xz-gpl-tools xz-static xz-tools
 ```
 
 It is possible to list all of the versions of `liblzma` available on your platform with `conda`:
