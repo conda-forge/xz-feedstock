@@ -170,7 +170,6 @@ outputs:
         - ninja  # [win]
         - make  # [not win]
       host:
-      host:
         - {{ pin_subpackage('liblzma', exact=True) }}
         - {{ pin_subpackage('liblzma-devel', exact=True) }}
         - {{ pin_subpackage('xz-tools', exact=True) }}
