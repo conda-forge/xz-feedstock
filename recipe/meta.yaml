@@ -210,8 +210,9 @@ outputs:
         - make  # [not win]
       host:
         - {{ pin_subpackage('xz', exact=True) }}
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
       run:
-        - {{ pin_subpackage('xz', exact=True) }}
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
     test:
       commands:
         - test -f ${PREFIX}/lib/liblzma.a          # [unix]
@@ -231,9 +232,10 @@ outputs:
         - make  # [not win]
       host:
         - {{ pin_subpackage('xz', exact=True) }}
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
         - {{ pin_subpackage('liblzma-static', exact=True) }}
       run:
-        - {{ pin_subpackage('xz', exact=True) }}
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
         - {{ pin_subpackage('liblzma-static', exact=True) }}
     test:
       commands:
