@@ -255,7 +255,6 @@ about:
     - COPYING.0BSD
     - COPYING.LGPLv2.1
     - COPYING.GPLv2
-  license_file: COPYING
   summary: Data compression software with high compression ratio
   description: |
     XZ Utils is free general-purpose data compression software with a high
