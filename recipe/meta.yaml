@@ -173,12 +173,12 @@ outputs:
         - {{ pin_subpackage('liblzma', exact=True) }}
         - {{ pin_subpackage('liblzma-devel', exact=True) }}
         - {{ pin_subpackage('xz-tools', exact=True) }}
-        - {{ pin_subpackage('xz-gpl-tools', exact=True) }}
+        - {{ pin_subpackage('xz-gpl-tools', exact=True) }}  # [unix]
       run:
         - {{ pin_subpackage('liblzma', exact=True) }}
         - {{ pin_subpackage('liblzma-devel', exact=True) }}
         - {{ pin_subpackage('xz-tools', exact=True) }}
-        - {{ pin_subpackage('xz-gpl-tools', exact=True) }}
+        - {{ pin_subpackage('xz-gpl-tools', exact=True) }}  # [unix]
     test:
       commands:
         - xz --help  # [not win]
