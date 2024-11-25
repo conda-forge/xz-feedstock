@@ -202,6 +202,9 @@ outputs:
   - name: liblzma-static
     script: install.sh  # [unix]
     script: bld-static.bat  # [win]
+    build:
+      always_include_files:
+        - Library/lib/cmake/liblzma  # [win]
     requirements:
       build:
         - {{ stdlib('c') }}
@@ -217,7 +220,7 @@ outputs:
     test:
       commands:
         - test -f ${PREFIX}/lib/liblzma.a          # [unix]
-        - if not exist %LIBRARY_PREFIX%\lib\liblzma.lib exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\lzma-static.lib exit 1  # [win]
     about:
       license: 0BSD
       license_file:
@@ -241,7 +244,7 @@ outputs:
     test:
       commands:
         - test -f ${PREFIX}/lib/liblzma.a          # [unix]
-        - if not exist %LIBRARY_PREFIX%\lib\liblzma.lib exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\lzma-static.lib exit 1  # [win]
     about:
       license: 0BSD
       license_file:

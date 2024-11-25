@@ -17,3 +17,5 @@ if errorlevel 1 exit /b 1
 ninja install
 if errorlevel 1 exit /b 1
 
+copy %LIBRARY_PREFIX%\lib\lzma.lib %LIBRARY_PREFIX%\lib\lzma-static.lib
+if errorlevel 1 exit /b 1
