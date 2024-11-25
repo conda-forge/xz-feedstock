@@ -163,7 +163,7 @@ outputs:
         - COPYING.GPLv2
   - name: xz
     script: install.sh  # [unix]
-    script: bld-static.bat  # [win]
+    script: install.bat  # [win]
     requirements:
       build:
         - {{ stdlib('c') }}
