@@ -10,6 +10,7 @@ source:
 
 build:
   number: 0
+  skip: true  # [not win]
   run_exports:
     # XZ's track record of backcompat is very good.  Keep default pins (next major version)
     #    https://abi-laboratory.pro/tracker/timeline/xz/
