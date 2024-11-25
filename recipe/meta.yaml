@@ -201,7 +201,7 @@ outputs:
         - COPYING.GPLv2
   - name: liblzma-static
     script: install.sh  # [unix]
-    script: install.bat  # [win]
+    script: bld-static.bat  # [win]
     requirements:
       build:
         - {{ stdlib('c') }}
