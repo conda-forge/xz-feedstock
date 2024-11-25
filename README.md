@@ -43,6 +43,13 @@ About xz-tools
 
 Package license: 0BSD AND LGPL-2.1-or-later
 
+About xz-gpl-tools
+------------------
+
+
+
+Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+
 About xz
 --------
 
@@ -82,6 +89,41 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
+              <td>linux_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2233&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/xz-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2233&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/xz-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2233&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/xz-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2233&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/xz-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2233&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/xz-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>win_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2233&branchName=main">
@@ -105,6 +147,7 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-liblzma--devel-green.svg)](https://anaconda.org/conda-forge/liblzma-devel) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/liblzma-devel.svg)](https://anaconda.org/conda-forge/liblzma-devel) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/liblzma-devel.svg)](https://anaconda.org/conda-forge/liblzma-devel) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/liblzma-devel.svg)](https://anaconda.org/conda-forge/liblzma-devel) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-liblzma--static-green.svg)](https://anaconda.org/conda-forge/liblzma-static) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/liblzma-static.svg)](https://anaconda.org/conda-forge/liblzma-static) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/liblzma-static.svg)](https://anaconda.org/conda-forge/liblzma-static) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/liblzma-static.svg)](https://anaconda.org/conda-forge/liblzma-static) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-xz-green.svg)](https://anaconda.org/conda-forge/xz) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz.svg)](https://anaconda.org/conda-forge/xz) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz.svg)](https://anaconda.org/conda-forge/xz) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz.svg)](https://anaconda.org/conda-forge/xz) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-xz--gpl--tools-green.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz-gpl-tools.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz-gpl-tools.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz-gpl-tools.svg)](https://anaconda.org/conda-forge/xz-gpl-tools) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-xz--static-green.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-xz--tools-green.svg)](https://anaconda.org/conda-forge/xz-tools) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz-tools.svg)](https://anaconda.org/conda-forge/xz-tools) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz-tools.svg)](https://anaconda.org/conda-forge/xz-tools) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz-tools.svg)](https://anaconda.org/conda-forge/xz-tools) |
 
@@ -118,16 +161,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `liblzma, liblzma-devel, liblzma-static, xz, xz-static, xz-tools` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `liblzma, liblzma-devel, liblzma-static, xz, xz-gpl-tools, xz-static, xz-tools` can be installed with `conda`:
 
 ```
-conda install liblzma liblzma-devel liblzma-static xz xz-static xz-tools
+conda install liblzma liblzma-devel liblzma-static xz xz-gpl-tools xz-static xz-tools
 ```
 
 or with `mamba`:
 
 ```
-mamba install liblzma liblzma-devel liblzma-static xz xz-static xz-tools
+mamba install liblzma liblzma-devel liblzma-static xz xz-gpl-tools xz-static xz-tools
 ```
 
 It is possible to list all of the versions of `liblzma` available on your platform with `conda`:
