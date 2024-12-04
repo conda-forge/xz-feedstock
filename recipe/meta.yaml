@@ -1,14 +1,12 @@
-{% set version = "5.2.9" %}
+{% set version = "5.6.3" %}
 
 package:
-  name: xz
+  name: xz-split
   version: {{ version }}
 
 source:
-  url: http://downloads.sourceforge.net/project/lzmautils/xz-{{ version }}.tar.bz2
-  sha256: b194507fba3a462a753c553149ccdaa168337bcb7deefddd067ba987c83dfce6
-  patches:
-    - 0002-Add-gettimeofday-for-VS2008.patch
+  url: https://github.com/tukaani-project/xz/releases/download/v{{ version }}/xz-{{ version }}.tar.gz
+  sha256: b1d45295d3f71f25a4c9101bd7c8d16cb56348bbef3bbc738da0351e17c73317
 
 build:
   number: 0
@@ -19,20 +17,169 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
-    - c99-to-c89  # [win and vc<14]
-    - cmake  # [win]
+    - cmake-no-system  # [win]
     - ninja  # [win]
     - make  # [not win]
-    - automake  # [not win]
-    - libtool  # [not win]
-  host:
-    - msinttypes  # [win and vc<14]
 
 outputs:
+  - name: liblzma
+    build:
+      run_exports:
+        # XZ's track record of backcompat is very good.  Keep default pins (next major version)
+        #    https://abi-laboratory.pro/tracker/timeline/xz/
+        - {{ pin_subpackage('liblzma') }}
+    script: install-liblzma.sh   # [unix]
+    script: install-liblzma.bat  # [win]
+    requirements:
+      build:
+        - {{ stdlib('c') }}
+        - {{ compiler('c') }}
+        - cmake-no-system  # [win]
+        - ninja  # [win]
+        - make  # [not win]
+    test:
+      commands:
+        - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
+        - if exist %LIBRARY_PREFIX%\lib\lzma.lib exit 1         # [win]
+        - test ! -f ${PREFIX}/lib/liblzma.a                     # [unix]
+        - test ! -f ${PREFIX}/lib/liblzma${SHLIB_EXT}           # [unix]
+        - test -f ${PREFIX}/lib/liblzma.so.*.*                  # [linux]
+        - test -f ${PREFIX}/lib/liblzma.*.dylib                 # [osx]
+    about:
+      license: 0BSD
+      license_file:
+        - COPYING
+        - COPYING.0BSD
+  - name: liblzma-devel
+    build:
+      run_exports:
+        # XZ's track record of backcompat is very good.  Keep default pins (next major version)
+        #    https://abi-laboratory.pro/tracker/timeline/xz/
+        - {{ pin_subpackage('liblzma') }}
+    script: install.sh   # [unix]
+    script: install.bat  # [win]
+    requirements:
+      build:
+        - {{ stdlib('c') }}
+        - {{ compiler('c') }}
+        - cmake-no-system  # [win]
+        - ninja  # [win]
+        - make  # [not win]
+      host:
+        - {{ pin_subpackage('liblzma', exact=True) }}
+      run:
+        - {{ pin_subpackage('liblzma', exact=True) }}
+    test:
+      commands:
+        - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\lzma.lib exit 1     # [win]
+        - if exist %LIBRARY_PREFIX%\lib\liblzma.lib exit 1      # [win]
+        - test ! -f ${PREFIX}/lib/liblzma.a                     # [unix]
+        - test -f ${PREFIX}/lib/liblzma${SHLIB_EXT}             # [unix]
+    about:
+      license: 0BSD
+      license_file:
+        - COPYING
+        - COPYING.0BSD
+  - name: xz-tools
+    script: install.sh   # [unix]
+    script: install.bat  # [win]
+    requirements:
+      build:
+        - {{ stdlib('c') }}
+        - {{ compiler('c') }}
+        - cmake-no-system  # [win]
+        - ninja  # [win]
+        - make  # [not win]
+      host:
+        - {{ pin_subpackage('liblzma', exact=True) }}
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
+      run:
+        - {{ pin_subpackage('liblzma', exact=True) }}
+    test:
+      commands:
+        - lzcat --help  # [unix]
+        - lzma --help  # [unix]
+        - lzmadec --help
+        - lzmainfo --help
+        - unlzma --help  # [unix]
+        - unxz --help  # [unix]
+        - xz --help
+        - xzcat --help  # [unix]
+        - xzdec --help
+    about:
+      license: 0BSD AND LGPL-2.1-or-later
+      license_file:
+        - COPYING
+        - COPYING.0BSD
+        - COPYING.LGPLv2.1
+  - name: xz-gpl-tools
+    script: install.sh   # [unix]
+    script: install.bat  # [win]
+    build:
+      skip: true  # [win]
+      run_exports:
+        # XZ's track record of backcompat is very good.  Keep default pins (next major version)
+        #    https://abi-laboratory.pro/tracker/timeline/xz/
+        - {{ pin_subpackage('liblzma') }}
+    requirements:
+      build:
+        - {{ stdlib('c') }}
+        - {{ compiler('c') }}
+        - cmake-no-system  # [win]
+        - ninja  # [win]
+        - make  # [not win]
+      host:
+        - {{ pin_subpackage('liblzma', exact=True) }}
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
+        - {{ pin_subpackage('xz-tools', exact=True) }}
+      run:
+        - {{ pin_subpackage('liblzma', exact=True) }}
+    test:
+      commands:
+        - lzcmp --help
+        - lzdiff --help
+        - lzegrep --help
+        - lzfgrep --help
+        - lzgrep --help
+        - lzless --help
+        - lzmore --help
+        - xzcmp --help
+        - xzdiff --help
+        - xzegrep --help
+        - xzfgrep --help
+        - xzgrep --help
+        - xzless --help
+        - xzmore --help
+    about:
+      license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+      license_file:
+        - COPYING
+        - COPYING.0BSD
+        - COPYING.LGPLv2.1
+        - COPYING.GPLv2
   - name: xz
     script: install.sh  # [unix]
     script: install.bat  # [win]
+    requirements:
+      build:
+        - {{ stdlib('c') }}
+        - {{ compiler('c') }}
+        - cmake-no-system  # [win]
+        - ninja  # [win]
+        - make  # [not win]
+      host:
+        - {{ pin_subpackage('liblzma', exact=True) }}
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
+        - {{ pin_subpackage('xz-tools', exact=True) }}
+        - {{ pin_subpackage('xz-gpl-tools', exact=True) }}  # [unix]
+      run:
+        - {{ pin_subpackage('liblzma', exact=True) }}
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
+        - {{ pin_subpackage('xz-tools', exact=True) }}
+        - {{ pin_subpackage('xz-gpl-tools', exact=True) }}  # [unix]
     test:
       commands:
         - xz --help  # [not win]
@@ -41,34 +188,77 @@ outputs:
         - xz.exe --help  # [win]
         - unxz.exe --help  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
-        - if not exist %LIBRARY_PREFIX%\lib\liblzma.lib exit 1  # [win]
+        - if not exist %LIBRARY_PREFIX%\lib\lzma.lib exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1  # [win]
         - test -f ${PREFIX}/lib/liblzma${SHLIB_EXT}  # [unix]
         - test ! -f ${PREFIX}/lib/liblzma.a          # [unix]
-  - name: xz-static
+    about:
+      license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+      license_file:
+        - COPYING
+        - COPYING.0BSD
+        - COPYING.LGPLv2.1
+        - COPYING.GPLv2
+  - name: liblzma-static
     script: install.sh  # [unix]
-    script: install.bat  # [win]
+    script: bld-static.bat  # [win]
+    build:
+      always_include_files:
+        - Library/lib/cmake/liblzma  # [win]
     requirements:
       build:
+        - {{ stdlib('c') }}
         - {{ compiler('c') }}
-        - c99-to-c89  # [win and vc<14]
-        - cmake  # [win]
+        - cmake-no-system  # [win]
         - ninja  # [win]
         - make  # [not win]
-        - automake  # [not win]
       host:
-        - msinttypes  # [win and vc<14]
         - {{ pin_subpackage('xz', exact=True) }}
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
       run:
-        - {{ pin_subpackage('xz', exact=True) }}
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
     test:
       commands:
         - test -f ${PREFIX}/lib/liblzma.a          # [unix]
+        - if not exist %LIBRARY_PREFIX%\lib\lzma-static.lib exit 1  # [win]
+    about:
+      license: 0BSD
+      license_file:
+        - COPYING
+        - COPYING.0BSD
+  - name: xz-static
+    requirements:
+      build:
+        - {{ stdlib('c') }}
+        - {{ compiler('c') }}
+        - cmake-no-system  # [win]
+        - ninja  # [win]
+        - make  # [not win]
+      host:
+        - {{ pin_subpackage('xz', exact=True) }}
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
+        - {{ pin_subpackage('liblzma-static', exact=True) }}
+      run:
+        - {{ pin_subpackage('liblzma-devel', exact=True) }}
+        - {{ pin_subpackage('liblzma-static', exact=True) }}
+    test:
+      commands:
+        - test -f ${PREFIX}/lib/liblzma.a          # [unix]
+        - if not exist %LIBRARY_PREFIX%\lib\lzma-static.lib exit 1  # [win]
+    about:
+      license: 0BSD
+      license_file:
+        - COPYING
+        - COPYING.0BSD
 
 about:
   home: http://tukaani.org/xz/
-  license: LGPL-2.1 and GPL-2.0
-  license_file: COPYING
+  license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+  license_file:
+    - COPYING
+    - COPYING.0BSD
+    - COPYING.LGPLv2.1
+    - COPYING.GPLv2
   summary: Data compression software with high compression ratio
   description: |
     XZ Utils is free general-purpose data compression software with a high
@@ -85,3 +275,4 @@ extra:
     - mingwandroid
     - nehaljwani
     - scopatz
+    - xhochy
