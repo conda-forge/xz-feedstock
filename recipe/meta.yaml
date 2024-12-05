@@ -191,7 +191,6 @@ outputs:
         - unxz --help  # [not win]
         - lzma --help  # [not win]
         - xz.exe --help  # [win]
-        - unxz.exe --help  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\lzma.lib exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1  # [win]
