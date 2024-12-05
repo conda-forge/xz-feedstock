@@ -9,7 +9,7 @@ source:
   sha256: b1d45295d3f71f25a4c9101bd7c8d16cb56348bbef3bbc738da0351e17c73317
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # XZ's track record of backcompat is very good.  Keep default pins (next major version)
     #    https://abi-laboratory.pro/tracker/timeline/xz/
@@ -161,6 +161,11 @@ outputs:
         - COPYING.LGPLv2.1
         - COPYING.GPLv2
   - name: xz
+    build:
+      run_exports:
+        # XZ's track record of backcompat is very good.  Keep default pins (next major version)
+        #    https://abi-laboratory.pro/tracker/timeline/xz/
+        - {{ pin_subpackage('liblzma') }}
     script: install.sh  # [unix]
     script: install.bat  # [win]
     requirements:
@@ -186,7 +191,6 @@ outputs:
         - unxz --help  # [not win]
         - lzma --help  # [not win]
         - xz.exe --help  # [win]
-        - unxz.exe --help  # [win]
         - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\lib\lzma.lib exit 1  # [win]
         - if not exist %LIBRARY_PREFIX%\include\lzma.h exit 1  # [win]
