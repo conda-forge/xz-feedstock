@@ -154,11 +154,9 @@ outputs:
         - xzless --help
         - xzmore --help
     about:
-      license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+      license: GPL-2.0-or-later
       license_file:
         - COPYING
-        - COPYING.0BSD
-        - COPYING.LGPLv2.1
         - COPYING.GPLv2
   - name: xz
     build:
@@ -184,7 +182,6 @@ outputs:
         - {{ pin_subpackage('liblzma', exact=True) }}
         - {{ pin_subpackage('liblzma-devel', exact=True) }}
         - {{ pin_subpackage('xz-tools', exact=True) }}
-        - {{ pin_subpackage('xz-gpl-tools', exact=True) }}  # [unix]
     test:
       commands:
         - xz --help  # [not win]
