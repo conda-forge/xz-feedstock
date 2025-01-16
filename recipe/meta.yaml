@@ -43,7 +43,7 @@ outputs:
       run_constrained:
         # circular constraint on this build's xz to prevent accepting pre-split xz
         # this is as close to 'exact' as we can get
-        xz =={{ version }} *_{{ build }}
+        - xz =={{ version }} *_{{ build }}
     test:
       commands:
         - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
