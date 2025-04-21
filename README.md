@@ -36,19 +36,12 @@ About liblzma-devel
 
 Package license: 0BSD
 
-About xz-tools
---------------
+About liblzma-static
+--------------------
 
 
 
-Package license: 0BSD AND LGPL-2.1-or-later
-
-About xz-gpl-tools
-------------------
-
-
-
-Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+Package license: 0BSD
 
 About xz
 --------
@@ -57,12 +50,12 @@ About xz
 
 Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
 
-About liblzma-static
---------------------
+About xz-gpl-tools
+------------------
 
 
 
-Package license: 0BSD
+Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
 
 About xz-static
 ---------------
@@ -70,6 +63,13 @@ About xz-static
 
 
 Package license: 0BSD
+
+About xz-tools
+--------------
+
+
+
+Package license: 0BSD AND LGPL-2.1-or-later
 
 Current build status
 ====================
@@ -128,6 +128,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2233&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/xz-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2233&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/xz-feedstock?branchName=main&jobName=win&configuration=win%20win_arm64_" alt="variant">
                 </a>
               </td>
             </tr>
