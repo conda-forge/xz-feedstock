@@ -22,6 +22,7 @@ requirements:
     - cmake-no-system  # [win]
     - ninja  # [win]
     - make  # [not win]
+    - diffutils  # [not win]
 
 outputs:
   - name: liblzma
