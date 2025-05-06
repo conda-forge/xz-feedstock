@@ -9,7 +9,7 @@ source:
   sha256: 507825b599356c10dca1cd720c9d0d0c9d5400b9de300af00e4d1ea150795543
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # XZ's track record of backcompat is very good.  Keep default pins (next major version)
     #    https://abi-laboratory.pro/tracker/timeline/xz/
@@ -40,6 +40,9 @@ outputs:
         - cmake-no-system  # [win]
         - ninja  # [win]
         - make  # [not win]
+      run_constrained:
+        # Ensure this collides with the unsplitted version
+        - xz {{ version }}.*
     test:
       commands:
         - if not exist %LIBRARY_PREFIX%\bin\liblzma.dll exit 1  # [win]
@@ -99,6 +102,9 @@ outputs:
         - {{ pin_subpackage('liblzma-devel', exact=True) }}
       run:
         - {{ pin_subpackage('liblzma', exact=True) }}
+      run_constrained:
+        # Ensure this collides with the unsplitted version
+        - xz {{ version }}.*
     test:
       commands:
         - lzcat --help  # [unix]
@@ -138,6 +144,9 @@ outputs:
         - {{ pin_subpackage('xz-tools', exact=True) }}
       run:
         - {{ pin_subpackage('liblzma', exact=True) }}
+      run_constrained:
+        # Ensure this collides with the unsplitted version
+        - xz {{ version }}.*
     test:
       commands:
         - lzcmp --help
@@ -222,6 +231,9 @@ outputs:
         - {{ pin_subpackage('liblzma-devel', exact=True) }}
       run:
         - {{ pin_subpackage('liblzma-devel', exact=True) }}
+      run_constrained:
+        # Ensure this collides with the unsplitted version
+        - xz {{ version }}.*
     test:
       commands:
         - test -f ${PREFIX}/lib/liblzma.a          # [unix]
