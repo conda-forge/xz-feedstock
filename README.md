@@ -25,51 +25,79 @@ work on some not-so-POSIX systems.
 About liblzma
 -------------
 
-
+Home: http://tukaani.org/xz/
 
 Package license: 0BSD
+
+Summary: a compression library with an API similar to that of zlib
+
+Development: http://git.tukaani.org/
 
 About liblzma-devel
 -------------------
 
-
+Home: http://tukaani.org/xz/
 
 Package license: 0BSD
+
+Summary: a compression library with an API similar to that of zlib
+
+Development: http://git.tukaani.org/
 
 About liblzma-static
 --------------------
 
-
+Home: http://tukaani.org/xz/
 
 Package license: 0BSD
+
+Summary: a compression library with an API similar to that of zlib
+
+Development: http://git.tukaani.org/
 
 About xz
 --------
 
-
+Home: http://tukaani.org/xz/
 
 Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+
+Summary: Data compression software with high compression ratio
+
+Development: http://git.tukaani.org/
 
 About xz-gpl-tools
 ------------------
 
-
+Home: http://tukaani.org/xz/
 
 Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
+
+Summary: A set of tools to work with xz-/lzma-compressed files (forked of grep)
+
+Development: http://git.tukaani.org/
 
 About xz-static
 ---------------
 
-
+Home: http://tukaani.org/xz/
 
 Package license: 0BSD
+
+Summary: a compression library with an API similar to that of zlib
+
+Development: http://git.tukaani.org/
 
 About xz-tools
 --------------
 
-
+Home: http://tukaani.org/xz/
 
 Package license: 0BSD AND LGPL-2.1-or-later
+
+Summary: A set of tools to work with xz-/lzma-compressed files
+
+Development: http://git.tukaani.org/
 
 Current build status
 ====================
