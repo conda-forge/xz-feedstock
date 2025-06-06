@@ -9,7 +9,7 @@ source:
   sha256: 507825b599356c10dca1cd720c9d0d0c9d5400b9de300af00e4d1ea150795543
 
 build:
-  number: 1
+  number: 2
   run_exports:
     # XZ's track record of backcompat is very good.  Keep default pins (next major version)
     #    https://abi-laboratory.pro/tracker/timeline/xz/
@@ -52,6 +52,9 @@ outputs:
         - test -f ${PREFIX}/lib/liblzma.so.*.*                  # [linux]
         - test -f ${PREFIX}/lib/liblzma.*.dylib                 # [osx]
     about:
+      home: http://tukaani.org/xz/
+      dev_url: http://git.tukaani.org/
+      summary: a compression library with an API similar to that of zlib
       license: 0BSD
       license_file:
         - COPYING
@@ -83,6 +86,9 @@ outputs:
         - test ! -f ${PREFIX}/lib/liblzma.a                     # [unix]
         - test -f ${PREFIX}/lib/liblzma${SHLIB_EXT}             # [unix]
     about:
+      home: http://tukaani.org/xz/
+      dev_url: http://git.tukaani.org/
+      summary: a compression library with an API similar to that of zlib
       license: 0BSD
       license_file:
         - COPYING
@@ -117,6 +123,9 @@ outputs:
         - xzcat --help  # [unix]
         - xzdec --help
     about:
+      home: http://tukaani.org/xz/
+      dev_url: http://git.tukaani.org/
+      summary: A set of tools to work with xz-/lzma-compressed files
       license: 0BSD AND LGPL-2.1-or-later
       license_file:
         - COPYING
@@ -164,6 +173,9 @@ outputs:
         - xzless --help
         - xzmore --help
     about:
+      home: http://tukaani.org/xz/
+      dev_url: http://git.tukaani.org/
+      summary: A set of tools to work with xz-/lzma-compressed files (forked of grep)
       license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
       license_file:
         - COPYING
@@ -207,6 +219,9 @@ outputs:
         - test -f ${PREFIX}/lib/liblzma${SHLIB_EXT}  # [unix]
         - test ! -f ${PREFIX}/lib/liblzma.a          # [unix]
     about:
+      home: http://tukaani.org/xz/
+      dev_url: http://git.tukaani.org/
+      summary: Data compression software with high compression ratio
       license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
       license_file:
         - COPYING
@@ -239,6 +254,9 @@ outputs:
         - test -f ${PREFIX}/lib/liblzma.a          # [unix]
         - if not exist %LIBRARY_PREFIX%\lib\lzma-static.lib exit 1  # [win]
     about:
+      home: http://tukaani.org/xz/
+      dev_url: http://git.tukaani.org/
+      summary: a compression library with an API similar to that of zlib
       license: 0BSD
       license_file:
         - COPYING
@@ -263,6 +281,9 @@ outputs:
         - test -f ${PREFIX}/lib/liblzma.a          # [unix]
         - if not exist %LIBRARY_PREFIX%\lib\lzma-static.lib exit 1  # [win]
     about:
+      home: http://tukaani.org/xz/
+      dev_url: http://git.tukaani.org/
+      summary: a compression library with an API similar to that of zlib
       license: 0BSD
       license_file:
         - COPYING
