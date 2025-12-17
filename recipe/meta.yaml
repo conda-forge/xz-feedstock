@@ -1,4 +1,4 @@
-{% set version = "5.8.1" %}
+{% set version = "5.8.2" %}
 
 package:
   name: xz-split
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/tukaani-project/xz/releases/download/v{{ version }}/xz-{{ version }}.tar.gz
-  sha256: 507825b599356c10dca1cd720c9d0d0c9d5400b9de300af00e4d1ea150795543
+  sha256: ce09c50a5962786b83e5da389c90dd2c15ecd0980a258dd01f70f9e7ce58a8f1
 
 build:
-  number: 2
+  number: 0
   run_exports:
     # XZ's track record of backcompat is very good.  Keep default pins (next major version)
     #    https://abi-laboratory.pro/tracker/timeline/xz/
