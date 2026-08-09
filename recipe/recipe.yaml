@@ -436,7 +436,7 @@ outputs:
               - ./test_static
           - if: win
             then:
-              - cl test_static.c /I%LIBRARY_PREFIX%\include %LIBRARY_PREFIX%\lib\lzma-static.lib /Fe:test_static.exe
+              - cl test_static.c /DLZMA_API_STATIC /I%LIBRARY_PREFIX%\include %LIBRARY_PREFIX%\lib\lzma-static.lib /Fe:test_static.exe
               - test_static.exe
     about:
       homepage: https://tukaani.org/xz/
