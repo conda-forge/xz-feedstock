@@ -59,8 +59,12 @@ outputs:
     tests:
       - package_contents:
           lib:
-            - lzma
+            - if: unix
+              then: lzma
           files:
+            exists:
+              - if: win
+                then: Library/bin/liblzma.dll
             not_exists:
               - if: unix
                 then:
@@ -123,8 +127,12 @@ outputs:
           include:
             - lzma.h
           lib:
-            - lzma
+            - if: unix
+              then: lzma
           files:
+            exists:
+              - if: win
+                then: Library/lib/lzma.lib
             not_exists:
               - if: unix
                 then: lib/liblzma.a
