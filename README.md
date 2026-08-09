@@ -1,103 +1,127 @@
-About xz-split-feedstock
-========================
+About liblzma-feedstock
+=======================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/xz-feedstock/blob/main/LICENSE.txt)
-
-
-About xz-split
---------------
-
-Home: http://tukaani.org/xz/
-
-Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
-
-Summary: Data compression software with high compression ratio
-
-Development: http://git.tukaani.org/
-
-Documentation: http://tukaani.org/xz/
-
-XZ Utils is free general-purpose data compression software with a high
-compression ratio. XZ Utils were written for POSIX-like systems, but also
-work on some not-so-POSIX systems.
 
 
 About liblzma
 -------------
 
-Home: http://tukaani.org/xz/
+Home: https://tukaani.org/xz/
 
 Package license: 0BSD
 
-Summary: a compression library with an API similar to that of zlib
+Summary: A compression library with an API similar to that of zlib
 
-Development: http://git.tukaani.org/
+Development: https://github.com/tukaani-project/xz
+
+Documentation: https://tukaani.org/xz/
+
+XZ Utils is free general-purpose data compression software with a high
+compression ratio. XZ Utils were written for POSIX-like systems, but also
+work on some not-so-POSIX systems.
 
 About liblzma-devel
 -------------------
 
-Home: http://tukaani.org/xz/
+Home: https://tukaani.org/xz/
 
 Package license: 0BSD
 
-Summary: a compression library with an API similar to that of zlib
+Summary: Development files for the liblzma compression library
 
-Development: http://git.tukaani.org/
+Development: https://github.com/tukaani-project/xz
+
+Documentation: https://tukaani.org/xz/
+
+XZ Utils is free general-purpose data compression software with a high
+compression ratio. XZ Utils were written for POSIX-like systems, but also
+work on some not-so-POSIX systems.
 
 About liblzma-static
 --------------------
 
-Home: http://tukaani.org/xz/
+Home: https://tukaani.org/xz/
 
 Package license: 0BSD
 
-Summary: a compression library with an API similar to that of zlib
+Summary: Static liblzma compression library
 
-Development: http://git.tukaani.org/
+Development: https://github.com/tukaani-project/xz
+
+Documentation: https://tukaani.org/xz/
+
+XZ Utils is free general-purpose data compression software with a high
+compression ratio. XZ Utils were written for POSIX-like systems, but also
+work on some not-so-POSIX systems.
 
 About xz
 --------
 
-Home: http://tukaani.org/xz/
+Home: https://tukaani.org/xz/
 
 Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
 
-Summary: Data compression software with high compression ratio
+Summary: Data compression software with a high compression ratio
 
-Development: http://git.tukaani.org/
+Development: https://github.com/tukaani-project/xz
+
+Documentation: https://tukaani.org/xz/
+
+XZ Utils is free general-purpose data compression software with a high
+compression ratio. XZ Utils were written for POSIX-like systems, but also
+work on some not-so-POSIX systems.
 
 About xz-gpl-tools
 ------------------
 
-Home: http://tukaani.org/xz/
+Home: https://tukaani.org/xz/
 
 Package license: 0BSD AND LGPL-2.1-or-later AND GPL-2.0-or-later
 
-Summary: A set of tools to work with xz-/lzma-compressed files (forked of grep)
+Summary: GPL-licensed helper tools for xz- and lzma-compressed files
 
-Development: http://git.tukaani.org/
+Development: https://github.com/tukaani-project/xz
+
+Documentation: https://tukaani.org/xz/
+
+XZ Utils is free general-purpose data compression software with a high
+compression ratio. XZ Utils were written for POSIX-like systems, but also
+work on some not-so-POSIX systems.
 
 About xz-static
 ---------------
 
-Home: http://tukaani.org/xz/
+Home: https://tukaani.org/xz/
 
 Package license: 0BSD
 
-Summary: a compression library with an API similar to that of zlib
+Summary: Metapackage for the static liblzma compression library
 
-Development: http://git.tukaani.org/
+Development: https://github.com/tukaani-project/xz
+
+Documentation: https://tukaani.org/xz/
+
+XZ Utils is free general-purpose data compression software with a high
+compression ratio. XZ Utils were written for POSIX-like systems, but also
+work on some not-so-POSIX systems.
 
 About xz-tools
 --------------
 
-Home: http://tukaani.org/xz/
+Home: https://tukaani.org/xz/
 
 Package license: 0BSD AND LGPL-2.1-or-later
 
-Summary: A set of tools to work with xz-/lzma-compressed files
+Summary: A set of tools for xz- and lzma-compressed files
 
-Development: http://git.tukaani.org/
+Development: https://github.com/tukaani-project/xz
+
+Documentation: https://tukaani.org/xz/
+
+XZ Utils is free general-purpose data compression software with a high
+compression ratio. XZ Utils were written for POSIX-like systems, but also
+work on some not-so-POSIX systems.
 
 Current build status
 ====================
@@ -165,10 +189,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-xz--static-green.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz-static.svg)](https://anaconda.org/conda-forge/xz-static) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-xz--tools-green.svg)](https://anaconda.org/conda-forge/xz-tools) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/xz-tools.svg)](https://anaconda.org/conda-forge/xz-tools) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/xz-tools.svg)](https://anaconda.org/conda-forge/xz-tools) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/xz-tools.svg)](https://anaconda.org/conda-forge/xz-tools) |
 
-Installing xz-split
-===================
+Installing liblzma
+==================
 
-Installing `xz-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `liblzma` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -254,17 +278,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating xz-split-feedstock
-===========================
+Updating liblzma-feedstock
+==========================
 
-If you would like to improve the xz-split recipe or build a new
+If you would like to improve the liblzma recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/xz-split-feedstock are
+Note that all branches in the conda-forge/liblzma-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
